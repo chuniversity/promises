@@ -13,8 +13,8 @@ var pluckFirstLineFromFile = function (filePath, callback) {
     if (err) {
       callback(err, data);
     } else {
-      var lines = data.toString().split(/\r?\n/);
-      callback(err, lines[0]);
+      var firstline = data.toString().split('\n').shift();
+      callback(err, firstline);
     }
   });
 };
